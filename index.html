@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+  <script>
+    window.onload = function () {
+      var path = new URL(window.location);
+      var liffId = path.searchParams.get('liff_id');
+      var formUrl = path.searchParams.get('form');
+      var redirect = function(id) {
+        var src = decodeURIComponent(formUrl.replace('*%7CUID%7C*', id));
+        try {
+          window.location.replace(src);
+        } catch {
+          window.location.href = src;
+        }
+      };
+
+      if (!path.searchParams.has('liff_id') || !path.searchParams.has('form')) {
+        alert('liff_id and form is required.');
+        return;
+      }
+
+      liff.init({
+        liffId: liffId
+      }).then(function (e) {
+        var isLoggedIn = liff.isLoggedIn();
+        var context = liff.getContext();
+
+        if (context !== null && context.userId) {
+          redirect(context.userId);
+          return;
+        }
+
+        if (isLoggedIn) {
+          liff.getProfile()
+            .then(function(data) {
+              redirect(data.userId);
+            })
+            .catch(function(err) {
+              alert(err);
+            })
+        } else {
+          liff.login({
+            redirectUri: location.href
+          })
+        }
+      }).catch(function (e) {
+        alert(e);
+      })
+    }
+  </script>
+</head><script type="text/javascript" id="mobile-view-switcher">navigator.__defineGetter__("userAgent", function () {return "Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1"})</script>
+
+<body>
+
+
+</body></html>
