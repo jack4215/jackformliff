@@ -64,11 +64,6 @@
   
  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
  <script>
-    function logOut() {
-      liff.logout()
-      window.location.reload()
-    }
-
     async function getUserProfile() {
       const profile = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
@@ -76,15 +71,6 @@
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
       document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
-    }
-    async function main() {
-      await liff.init({ liffId: "1653575653-e9vXldMN" })
-      if (liff.isLoggedIn()) {
-        getUserProfile()
-        document.getElementById("accessToken").append(liff.getAccessToken())
-      } else {
-        liff.login({ redirectUri: "https://mokmoon.com/liff1/path"})
-      }
     }
     main()
   </script>
