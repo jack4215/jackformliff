@@ -22,13 +22,13 @@
         try {
           window.location.replace(src);
         } catch {
-          window.location.hcref = src;
+          window.location.href = src;
         }
       };
       
       
       if (!path.searchParams.has('liff_id') || !path.searchParams.has('form')) {
-        alert('請使用 LINE 應用程式開啟'<br><br>'若您已使用 LINE 應用程式開啟，還請再確認網址是否無誤，感謝您的配合');
+        alert('請使用 LINE 應用程式開啟'<br>'若您已使用 LINE 應用程式開啟，還請再確認網址是否無誤，感謝您的配合');
         return;
       }
       
@@ -51,6 +51,7 @@
             redirectUri: location.hcref
           })
         }
+       }
     }
   </script>
 </head>
