@@ -22,7 +22,7 @@
         try {
           window.location.replace(src);
         } catch {
-          window.location.href = src;
+          window.location.hcref = src;
         }
       };
       
@@ -41,16 +41,6 @@
         .then(function () {
         var isLoggedIn = liff.isLoggedIn();
         var context = liff.getContext();
-
-        /*if (context !== null && context.userId) {
-          redirect(context.userId);
-          return;
-        }*/
-        
-      /*  if (context !== null && context.displayName) {
-          redirect(context.displayName);
-          return;
-        }*/
         
         if (isLoggedIn) {
           liff.getProfile()
@@ -64,7 +54,7 @@
         } 
         else {
           liff.login({
-            redirectUri: location.href
+            redirectUri: location.hcref
           })
         }
       }).catch(function (e) {
