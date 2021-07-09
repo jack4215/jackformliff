@@ -37,33 +37,38 @@
         alert('請使用 LINE 應用程式開啟');
         return;
       }
+      
       if (!path.searchParams.has('liff_id')) {
         alert('僅限開啟 Google 表單，請重新確認網址');
         return;
       }
       
-      liff.init({
-        liffId: liffId
-      }).then(function (e) {
+      liff.init({liffId: liffId})
+        .then(function () {
         var isLoggedIn = liff.isLoggedIn();
         var context = liff.getContext();
 
-        if (context !== null && context.displayName) {
-          redirect(context.displayName);
-          //redirect(context.userId);
+        if (context !== null && context.userId) {
+          redirect(context.userId);
           return;
         }
-
+        
+        if (context !== null && context.displayName) {
+          redirect(context.displayName);
+          return;
+        }
+        
         if (isLoggedIn) {
           liff.getProfile()
             .then(function(data) {
               redirect(data.displayName);
-             // redirect(data.userId);
+              redirect(data.userId);
             })
             .catch(function(err) {
               alert(err);
             })
-        } else {
+        } 
+        else {
           liff.login({
             redirectUri: location.href
           })
