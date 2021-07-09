@@ -26,17 +26,16 @@
           window.location.href = src;
         }
       };
-
-      if (!path.searchParams.has('liff_id')) {
-        alert('請使用 LINE 應用程式開啟');
-        return;
-      }
       
       if (!path.searchParams.has('form')) {
         alert('僅限開啟 Google 表單，請重新確認網址');
         return;
       }
-
+      if (!path.searchParams.has('liff_id')) {
+        alert('請使用 LINE 應用程式開啟');
+        return;
+      }
+      
       liff.init({
         liffId: liffId
       }).then(function (e) {
