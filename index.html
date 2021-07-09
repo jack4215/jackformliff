@@ -24,14 +24,14 @@
         } catch {
           window.location.href = src;
         }
-        var redirect = function(name) {
+/*       var redirect = function(name) {
         var src = decodeURIComponent(formUrl.replace('*%7CNAME%7C*', name));
         try {
-          window.location.replace(src);
+          window.location.replace(str);
         } catch {
-          window.location.href = src;
+          window.location.href = str;
         }
-      };
+      }; */
       
       if (!path.searchParams.has('form')) {
         alert('請使用 LINE 應用程式開啟');
