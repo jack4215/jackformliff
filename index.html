@@ -19,6 +19,7 @@
       var formUrl = path.searchParams.get('form');
       var redirect = function(id) {
         var src = decodeURIComponent(formUrl.replace('*%7CUID%7C*', id));
+        var src = decodeURIComponent(formUrl.replace('*%7CNAME%7C*', NAME));
         try {
           window.location.replace(src);
         } catch {
