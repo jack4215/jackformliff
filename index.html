@@ -19,7 +19,7 @@
       var formUrl = path.searchParams.get('form');
       var redirect = function(id) {
         var src = decodeURIComponent(formUrl.replace('*%7CUID%7C*', id));
-        var src = decodeURIComponent(formUrl.replace('*%7CNAME%7C*', NAME));
+        var src = decodeURIComponent(formUrl.replace('*%7CNAME%7C*', Name));
         try {
           window.location.replace(src);
         } catch {
@@ -39,6 +39,7 @@
         var context = liff.getContext();
 
         if (context !== null && context.userId) {
+          redirect(context.displayName);
           redirect(context.userId);
           return;
         }
@@ -46,6 +47,7 @@
         if (isLoggedIn) {
           liff.getProfile()
             .then(function(data) {
+              redirect(data.displayName);
               redirect(data.userId);
             })
             .catch(function(err) {
