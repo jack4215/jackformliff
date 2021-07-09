@@ -48,10 +48,10 @@
         var isLoggedIn = liff.isLoggedIn();
         var context = liff.getContext();
 
-        if (context !== null && context.userId) {
+        /*if (context !== null && context.userId) {
           redirect(context.userId);
           return;
-        }
+        }*/
         
         if (context !== null && context.displayName) {
           redirect(context.displayName);
@@ -62,7 +62,7 @@
           liff.getProfile()
             .then(function(data) {
               redirect(data.displayName);
-//              redirect(data.userId);
+              redirect(data.userId);
             })
             .catch(function(err) {
               alert(err);
