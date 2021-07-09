@@ -56,24 +56,6 @@
             redirectUri: location.hcref
           })
         }
-        
-        if (isLoggedIn) {
-          liff.getProfile()
-            .then(function(data) {
-              redirect(data.userId);
-            })
-            .catch(function(err) {
-              alert(err);
-            })
-        } 
-        else {
-          liff.login({
-            redirectUri: location.href
-          })
-        }
-      }).catch(function (e) {
-        alert(e);
-      })
     }
   </script>
 </head>
