@@ -1,8 +1,3 @@
 # jackformliff
-## deploy
 
-deploy with [heroku button](https://heroku.com/deploy)
-1. switch to [main branch](../../tree/main)
-2. deploy with [heroku button](https://heroku.com/deploy)
-
-## auto update
+ LIFF 測試，自動帶入LINE個人資料至 Google 表單
