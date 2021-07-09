@@ -17,18 +17,12 @@
       var path = new URL(window.location);
       var liffId = path.searchParams.get('liff_id');
       var formUrl = path.searchParams.get('form');
-      var redirect = function(name, id) {
+      var redirect = function(name) {
         var src = decodeURIComponent(formUrl.replace('*%7CNAME%7C*', name));
         try {
           window.location.replace(src);
         } catch {
           window.location.hcref = src;
-        }
-        var src = decodeURIComponent(formUrl.replace('*%7CUID%7C*', id));
-        try {
-          window.location.replace(src);
-        } catch {
-          window.location.href = src;
         }
       };
       
