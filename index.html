@@ -77,7 +77,6 @@
   <font size="2">
    <hr width=90%>
     <p id="displayName"><b>　displayName:</b> </p>
-    <p id="statusMessage"><b>　statusMessage:</b> </p>
     <p id="userId"><b>　userId:</b> </p>
    <hr width=90%>
    <p><P valign="bottom" Align=center>By 筍伯♪</p>
@@ -94,7 +93,6 @@
       async function getUserProfile() {
       const profile = await liff.getProfile()
       document.getElementById("statusMessage").append(profile.statusMessage)
-      document.getElementById("displayName").append(profile.displayName)
       document.getElementById("userId").append(profile.userId)
       }
     async function main() {
