@@ -20,22 +20,6 @@
   
   <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
   <script>
-    async function getUserProfile() {
-      const profile = await liff.getProfile()
-      document.getElementById("statusMessage").append(profile.statusMessage)
-      document.getElementById("displayName").append(profile.displayName)
-    }
-    async function main() {
-      await liff.init({ liffId: "1654805431-RVYvxYWB" })
-      if (liff.isLoggedIn()) {
-        getUserProfile()
-        document.getElementById("accessToken").append(liff.getAccessToken())
-      } else {
-        liff.login({ redirectUri: "https://jack4215.github.io/LINEpath/" })
-      }
-    }
-    main()
-    
     /*
     window.onload = function () {
       var path = new URL(window.location);
@@ -95,6 +79,32 @@
   <p><P Align=center><font size="2">By 筍伯♪</p>
   <p id="displayName"><b>displayName:</b> </p>
   <p id="statusMessage"><b>statusMessage:</b> </p>
+    
+  <script>
+    const queryString = decodeURIComponent(window.location.search);
+    const params = new URLSearchParams(queryString);
+    document.getElementById("param").append(params.get("param"));
+  </script>
+
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script>
+      async function getUserProfile() {
+      const profile = await liff.getProfile()
+      document.getElementById("statusMessage").append(profile.statusMessage)
+      document.getElementById("displayName").append(profile.displayName)
+      }
+    async function main() {
+      await liff.init({ liffId: "1654805431-RVYvxYWB" })
+      if (liff.isLoggedIn()) {
+        getUserProfile()
+        document.getElementById("accessToken").append(liff.getAccessToken())
+      } else {
+        liff.login({ redirectUri: "https://jack4215.github.io/LINEpath/" })
+      }
+    }
+    main()
+  </script>
+    
 </body>
 </div>
 </html>
