@@ -40,10 +40,25 @@
 <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 <script>
   async function main() {
-    await liff.init({ liffId: "1656185375-gBk83qL0" })
-    if (liff.isLoggedIn()) {
-      getUserProfile()     
-    } 
+    await liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
+      var isLoggedIn = liff.isLoggedIn();
+      //var context = liff.getContext();
+      if (isLoggedIn) {     
+        liff.getProfile()
+        .then(function(data) {
+          redirect(data.displayName , data.userId);
+        })
+        .catch(function(err) {
+          alert(err);
+        })                                         
+      } else {
+        liff.login({
+          redirectUri: location.href
+        })
+      }
+    }).catch(function (e) {
+      alert(e);
+    })
   } 
   async function getUserProfile() {
     const profile = await liff.getProfile()
@@ -70,25 +85,6 @@
       return;
     }  */
       
-    liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
-      var isLoggedIn = liff.isLoggedIn();
-      //var context = liff.getContext();
-      if (isLoggedIn) {     
-        liff.getProfile()
-        .then(function(data) {
-          redirect(data.displayName , data.userId);
-        })
-        .catch(function(err) {
-          alert(err);
-        })                                         
-      } else {
-        liff.login({
-          redirectUri: location.href
-        })
-      }
-    }).catch(function (e) {
-      alert(e);
-    })
   }
 
 </script>
