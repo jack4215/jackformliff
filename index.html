@@ -41,22 +41,6 @@
     
 <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
   <script>
-    async function getUserProfile() {
-      const profile = await liff.getProfile()
-      document.getElementById("displayName").append(profile.displayName)
-      document.getElementById("userId").append(profile.userId)
-    }
-    async function main() {
-      await liff.init({ liffId: "1656185375-gBk83qL0" })
-      if (liff.isLoggedIn()) {
-        getUserProfile()
-        document.getElementById("accessToken").append(liff.getAccessToken())
-      } else {
-        liff.login({ redirectUri: "https://jack4215.github.io/jackformliff/" })
-      }
-    }
-   main()
-    
    window.onload = function () {
      var path = new URL(window.location);
      var liffId = path.searchParams.get('liff_id');
@@ -69,16 +53,13 @@
          window.location.href = src;
        }
      };
-
      if (!path.searchParams.has('liff_id') || !path.searchParams.has('form')) {
        alert('請使用 LINE 應用程式開啟\n\n若您已使用 LINE 應用程式開啟，還請再確認網址是否無誤，感謝您的配合');
        return;
      }
-
      liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
        var isLoggedIn = liff.isLoggedIn();
        var context = liff.getContext();
-
        if (isLoggedIn) {
          liff.getProfile()
            .then(function(data) {
@@ -97,8 +78,22 @@
      })
   }
     
+    async function getUserProfile() {
+      const profile = await liff.getProfile()
+      document.getElementById("displayName").append(profile.displayName)
+      document.getElementById("userId").append(profile.userId)
+    }
+    async function main() {
+      await liff.init({ liffId: "1656185375-gBk83qL0" })
+      if (liff.isLoggedIn()) {
+        getUserProfile()
+        document.getElementById("accessToken").append(liff.getAccessToken())
+      } else {
+        liff.login({ redirectUri: "https://jack4215.github.io/jackformliff/" })
+      }
+    }
+    main()
  </script>
-
 
 </body>
 </div>
