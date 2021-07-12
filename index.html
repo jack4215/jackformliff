@@ -58,8 +58,8 @@
      var path = new URL(window.location);
      var liffId = path.searchParams.get('liff_id');
      var formUrl = path.searchParams.get('form');
-     var redirect = function(name,uid) {
-       var src = decodeURIComponent(formUrl.replaceAll('*%7CNAME%7C*', name).replaceAll('*%7CUID%7C*', uid));
+     var redirect = function(name,uid,email) {
+       var src = decodeURIComponent(formUrl.replaceAll('*%7CNAME%7C*', name).replaceAll('*%7CUID%7C*', uid).replaceAll('*%7CEMAIL%7C*', email));
        try {
          window.location.replace(src);
        } catch {
@@ -75,7 +75,7 @@
        var context = liff.getContext();
        if (isLoggedIn) {     
          liff.getProfile().then(function(data) {
-             redirect(data.displayName , data.userId);
+             redirect(data.displayName , data.userId , data.decodedIDToken);
            })
            .catch(function(err) {
              alert(err);
