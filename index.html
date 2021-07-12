@@ -51,6 +51,12 @@
     document.getElementById("userId").append(profile.userId)
   }
   main() 
+  
+  if (!path.searchParams.has('liff_id') || !path.searchParams.has('form')) 
+    alert('請使用 LINE 應用程式開啟\n\n若您已使用 LINE 應用程式開啟，還請再確認網址是否無誤，感謝您的配合');
+    return;
+  }  
+  
 </script>  
   
 <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>  
