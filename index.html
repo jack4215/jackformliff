@@ -41,6 +41,22 @@
     
 <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
   <script>
+      async function getUserProfile() {
+      const profile = await liff.getProfile()
+      document.getElementById("displayName").append(profile.displayName)
+      document.getElementById("userId").append(profile.userId)
+    }
+    async function main() {
+      await liff.init({ liffId: "1656185375-gBk83qL0" })
+      if (liff.isLoggedIn()) {
+        getUserProfile()
+        document.getElementById("accessToken").append(liff.getAccessToken())
+      } else {
+        liff.login({ redirectUri: "https://jack4215.github.io/jackformliff/" })
+      }
+    }
+    main()
+    
    window.onload = function () {
      var path = new URL(window.location);
      var liffId = path.searchParams.get('liff_id');
@@ -77,22 +93,7 @@
        alert(e);
      })
   }
-    
-    async function getUserProfile() {
-      const profile = await liff.getProfile()
-      document.getElementById("displayName").append(profile.displayName)
-      document.getElementById("userId").append(profile.userId)
-    }
-    async function main() {
-      await liff.init({ liffId: "1656185375-gBk83qL0" })
-      if (liff.isLoggedIn()) {
-        getUserProfile()
-        document.getElementById("accessToken").append(liff.getAccessToken())
-      } else {
-        liff.login({ redirectUri: "https://jack4215.github.io/jackformliff/" })
-      }
-    }
-    main()
+ 
  </script>
 
 </body>
