@@ -52,12 +52,6 @@
   }
   main() 
   
-  try {
-    Thread.sleep(3000);                
-  } catch(InterruptedException ex) {
-    Thread.currentThread().interrupt();
-  }
-  
   window.onload =  function(){
     var path = new URL(window.location);
     var liffId = path.searchParams.get('liff_id');
