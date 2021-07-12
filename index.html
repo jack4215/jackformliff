@@ -75,11 +75,17 @@
        var context = liff.getContext();
        if (isLoggedIn) {     
          liff.getProfile().then(function(data) {
-             redirect(data.displayName , data.userId , data.decodedIDToken);
+             redirect(data.displayName , data.userId);
            })
            .catch(function(err) {
              alert(err);
            })
+         liff.getDecodedIDToken(function(data){
+             redirect(data.decodedIDToken);
+           })
+           .catch(function(err) {
+             alert(err);
+           })                                                 
        } else {
          liff.login({
            redirectUri: location.href
