@@ -76,6 +76,8 @@
        if (isLoggedIn) {
          liff.getProfile()
            .then(function(data) {
+             document.getElementById("displayName").append(profile.displayName)
+             document.getElementById("userId").append(profile.userId)
              redirect(data.displayName);
            })
            .catch(function(err) {
