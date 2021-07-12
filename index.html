@@ -41,7 +41,7 @@
     
 <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
   <script>
- /*     async function getUserProfile() {
+   /*   async function getUserProfile() {
       const profile = await liff.getProfile()
       document.getElementById("displayName").append(profile.displayName)
       document.getElementById("userId").append(profile.userId)
@@ -74,10 +74,13 @@
        var isLoggedIn = liff.isLoggedIn();
        var context = liff.getContext();
        if (isLoggedIn) {
-         liff.getProfile()
-           .then(function(data) {
-             document.getElementById("displayName").append(profile.displayName)
-             document.getElementById("userId").append(profile.userId)
+        
+         getUserProfile()
+          const profile = await liff.getProfile()
+          document.getElementById("displayName").append(profile.displayName)
+          document.getElementById("userId").append(profile.userId
+         
+         liff.getProfile().then(function(data) {
              redirect(data.displayName);
            })
            .catch(function(err) {
