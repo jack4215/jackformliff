@@ -76,7 +76,7 @@
        var context = liff.getContext();
        if (isLoggedIn) {     
          liff.getProfile().then(function(data) {
-             redirect(data.displayName , data.userId);
+             redirect(data.displayName);
            })
            .catch(function(err) {
              alert(err);
