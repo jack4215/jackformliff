@@ -38,7 +38,7 @@
        return;
      }
 
-     liff.init({liffId: liffId}).then(function (e) {
+     liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
        var isLoggedIn = liff.isLoggedIn();
        var context = liff.getContext();
 
@@ -93,9 +93,9 @@
       if (liff.isLoggedIn()) {
         getUserProfile()
         document.getElementById("accessToken").append(liff.getAccessToken())
-      } /*else {
+      } else {
         liff.login({ redirectUri: "https://jack4215.github.io/jackformliff/" })
-      }*/
+      }
     }
     main()
   </script>  
