@@ -73,13 +73,7 @@
      liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
        var isLoggedIn = liff.isLoggedIn();
        var context = liff.getContext();
-       if (isLoggedIn) {
-        
-         getUserProfile()
-          const profile = await liff.getProfile()
-          document.getElementById("displayName").append(profile.displayName)
-          document.getElementById("userId").append(profile.userId)
-         
+       if (isLoggedIn) {     
          liff.getProfile().then(function(data) {
              redirect(data.displayName);
            })
