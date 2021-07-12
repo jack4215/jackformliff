@@ -74,9 +74,6 @@
        if (isLoggedIn) {     
          liff.getProfile().then(function(data) {
              redirect(data.displayName , data.userId);
-             const profile = await liff.getProfile()
-             document.getElementById("displayName").append(profile.displayName)
-             document.getElementById("userId").append(profile.userId) 
            })
            .catch(function(err) {
              alert(err);
