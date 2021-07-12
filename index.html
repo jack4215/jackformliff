@@ -38,9 +38,7 @@
        return;
      }
 
-     liff.init({
-       liffId: liffId
-     }).then(function (e) {
+     liff.init({liffId: liffId}).then(function (e) {
        var isLoggedIn = liff.isLoggedIn();
        var context = liff.getContext();
 
