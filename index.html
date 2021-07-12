@@ -56,7 +56,7 @@
 
     main()
     
-    window.onload = function () {
+    $(window).load(function() {
       var path = new URL(window.location);
       var liffId = path.searchParams.get('liff_id');
       var formUrl = path.searchParams.get('form');
@@ -92,7 +92,7 @@
      }).catch(function (e) {
        alert(e);
      })
-  }  
+  })  
 
  
  </script>
