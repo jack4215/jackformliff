@@ -56,17 +56,17 @@
     main()
     
     window.onload = function () {
-     var path = new URL(window.location);
-     var liffId = path.searchParams.get('liff_id');
-     var formUrl = path.searchParams.get('form');
-     var redirect = function(name,uid,email) {
-       var src = decodeURIComponent(formUrl.replaceAll('*%7CNAME%7C*', name).replaceAll('*%7CUID%7C*', uid));
-       try {
-         window.location.replace(src);
-       } catch {
-         window.location.href = src;
-       }
-     };
+      var path = new URL(window.location);
+      var liffId = path.searchParams.get('liff_id');
+      var formUrl = path.searchParams.get('form');
+      var redirect = function(name,uid,email) {
+        var src = decodeURIComponent(formUrl.replaceAll('*%7CNAME%7C*', name).replaceAll('*%7CUID%7C*', uid));
+        try {
+          window.location.replace(src);
+        } catch {
+          window.location.href = src;
+        }
+      };
       
      if (!path.searchParams.has('liff_id') || !path.searchParams.has('form')) {
        alert('請使用 LINE 應用程式開啟\n\n若您已使用 LINE 應用程式開啟，還請再確認網址是否無誤，感謝您的配合');
@@ -78,11 +78,11 @@
        var context = liff.getContext();
        if (isLoggedIn) {     
          liff.getProfile().then(function(data) {
-             redirect(data.displayName , data.userId);
-           })
-           .catch(function(err) {
-             alert(err);
-           })                                         
+           redirect(data.displayName , data.userId);
+         })
+         .catch(function(err) {
+           alert(err);
+         })                                         
        } else {
          liff.login({
            redirectUri: location.href
