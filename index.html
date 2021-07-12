@@ -44,14 +44,14 @@
     if (liff.isLoggedIn()) {
       getUserProfile()     
     } 
-  } 
+  } */
   async function getUserProfile() {
     const profile = await liff.getProfile()
     document.getElementById("displayName").append(profile.displayName)
     document.getElementById("userId").append(profile.userId)
   }
 
-  main() */
+  main() 
     
   window.onload = function(){
     var path = new URL(window.location);
@@ -76,9 +76,6 @@
       var context = liff.getContext();
       if (isLoggedIn) {     
         liff.getProfile()
-          const profile = await liff.getProfile()
-            document.getElementById("displayName").append(profile.displayName)
-            document.getElementById("userId").append(profile.userId)  
         .then(function(data) {
           redirect(data.displayName , data.userId);
         })
