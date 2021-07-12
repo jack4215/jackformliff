@@ -50,13 +50,8 @@
       await liff.init({ liffId: "1656185375-gBk83qL0" })
       if (liff.isLoggedIn()) {
         getUserProfile()
-      } /*else {
-        liff.login({ redirectUri: "https://jack4215.github.io/jackformliff/" })
-      }*/
-    }
-    main()
-    
-   window.onload = function () {
+        
+     window.onload = function () {
      var path = new URL(window.location);
      var liffId = path.searchParams.get('liff_id');
      var formUrl = path.searchParams.get('form');
@@ -92,6 +87,13 @@
        alert(e);
      })
   }
+        
+        
+      } 
+    }
+    main()
+    
+
  
  </script>
 
