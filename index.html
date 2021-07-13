@@ -75,7 +75,7 @@
              redirect(data.displayName , data.userId);
            })
            .catch(function(err) {
-            // alert('請同意本服務存取所有項目，感謝您的配合\n\n（欲調整存取項目請至 LINE 應用程式重新操作）');
+            return;// alert('請同意本服務存取所有項目，感謝您的配合\n\n（欲調整存取項目請至 LINE 應用程式重新操作）');
            })
        } else {
          alert('請先使用 LINE 登入，感謝您的配合');
