@@ -72,7 +72,7 @@
        var isLoggedIn = liff.isLoggedIn();
        if (isLoggedIn) {     
          liff.getProfile().then(function(data) {
-             Thread.sleep(3000);
+             data.sleep(3000);
              redirect(data.displayName , data.userId);
            })
            .catch(function(err) {
