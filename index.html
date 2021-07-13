@@ -43,8 +43,13 @@
     await liff.init({ liffId: "1656185375-gBk83qL0" })
       if (liff.isLoggedIn()) {
         getUserProfile()     
-      } 
+      } else {
+        liff.login({
+           redirectUri: location.href
+        })
+      }
   }
+  
   async function getUserProfile() {
     const profile = await liff.getProfile()
     document.getElementById("displayName").append(profile.displayName)
