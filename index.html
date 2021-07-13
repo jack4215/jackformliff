@@ -44,9 +44,7 @@
       if (liff.isLoggedIn()) {
         getUserProfile()     
       } else {
-        liff.login({
-           redirectUri: location.href
-        })
+        liff.login()
       }
   }
   
