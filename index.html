@@ -43,11 +43,8 @@
     await liff.init({ liffId: "1656185375-gBk83qL0" })
       if (liff.isLoggedIn()) {
         getUserProfile()     
-      } else {
-        alert('您尚未登入，請先使用 LINE 登入，感謝您的配合');
-        return;
-      }
-    }
+      } 
+  }
   async function getUserProfile() {
     const profile = await liff.getProfile()
     document.getElementById("displayName").append(profile.displayName)
