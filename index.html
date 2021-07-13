@@ -70,21 +70,21 @@
     };
     
     liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
-       var isLoggedIn = liff.isLoggedIn();
-       if (isLoggedIn) {     
-         liff.getProfile().then(function(data) {
-             redirect(data.displayName , data.userId);
-           })
-           .catch(function(err) {
-            alert('服務異常，將重新登入');
-            liff.logout(); 
-            window.location.reload();
-           })
-       } else {
-         alert('請先使用 LINE 登入，感謝您的配合');
-         liff.login({redirectUri: location.href})
-       }
-     })
+      var isLoggedIn = liff.isLoggedIn();
+      if (isLoggedIn) {     
+        liff.getProfile().then(function(data) {
+          redirect(data.displayName , data.userId);
+        })
+        .catch(function(err) {
+        alert('服務異常，將重新登入');
+        liff.logout(); 
+        window.location.reload();
+        })
+      } else {
+        alert('請先使用 LINE 登入，感謝您的配合');
+        liff.login({redirectUri: location.href})
+      }
+    })
   }
 
 </script>
