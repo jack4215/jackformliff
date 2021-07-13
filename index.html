@@ -75,7 +75,7 @@
              redirect(data.displayName , data.userId);
            })
            .catch(function(err) {
-             alert('請使用 LINE 應用程式開啟\n\n若您已使用 LINE 應用程式開啟，還請再確認網址是否無誤，感謝您的配合');
+             alert('請先使用 LINE 登入，感謝您的配合');
            })
        } else {
          liff.login({
@@ -83,7 +83,7 @@
          })
        }
      }).catch(function (e) {
-       alert(e);
+       alert('請先使用 LINE 登入，感謝您的配合');
      })  
   }
 
