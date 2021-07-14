@@ -72,7 +72,7 @@
     liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
       var isLoggedIn = liff.isLoggedIn();
       if (isLoggedIn) {     
-        liff..getDecodedIDToken().then(function(data) {  
+        liff.getDecodedIDToken().then(function(data) {  
           redirect(data.decodedIDToken);  //data.displayName , data.userId
         })
         .catch(function(err) {
