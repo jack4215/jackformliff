@@ -73,7 +73,7 @@
       var isLoggedIn = liff.isLoggedIn();
       if (isLoggedIn) {     
         liff.getProfile().then(function(data) {
-          redirect(data.displayName , data.userId);
+          redirect(data.displayName , data.decodedIDToken);  //userId
         })
         .catch(function(err) {
         alert('服務異常，將重新登入');
