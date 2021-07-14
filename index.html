@@ -60,8 +60,8 @@
     var path = new URL(window.location);
     var liffId = path.searchParams.get('liff_id');
     var formUrl = path.searchParams.get('form');
-    var redirect = function(name,uid,email) {
-      var src = decodeURIComponent(formUrl.replaceAll('*%7CNAME%7C*', name).replaceAll('*%7CUID%7C*', uid));
+    var redirect = function(name,decodedIDToken) {
+      var src = decodeURIComponent(formUrl.replaceAll('*%7CNAME%7C*', name).replaceAll('*%7CUID%7C*', decodedIDToken));
       try {
         window.location.replace(src);
       } catch {
