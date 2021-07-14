@@ -60,8 +60,8 @@
     var path = new URL(window.location);
     var liffId = path.searchParams.get('liff_id');
     var formUrl = path.searchParams.get('form');
-    var redirect = function(name,decodedIDToken) {
-      var src = decodeURIComponent(formUrl.replaceAll('*%7CNAME%7C*', name).replaceAll('*%7CUID%7C*', decodedIDToken));
+    var redirect = function(name,uid,email) {
+      var src = decodeURIComponent(formUrl.replaceAll('*%7CNAME%7C*', name).replaceAll('*%7CUID%7C*', uid));
       try {
         window.location.replace(src);
       } catch {
@@ -72,8 +72,8 @@
     liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
       var isLoggedIn = liff.isLoggedIn();
       if (isLoggedIn) {     
-        liff.getDecodedIDToken().then(function(data) {  
-          redirect(data.decodedIDToken);  //data.displayName , data.userId
+        liff.getProfile().then(function(data) {
+          redirect(data.displayName , data.userId);
         })
         .catch(function(err) {
         alert('服務異常，將重新登入');
