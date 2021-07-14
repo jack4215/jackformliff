@@ -72,8 +72,8 @@
     liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
       var isLoggedIn = liff.isLoggedIn();
       if (isLoggedIn) {     
-        liff.getProfile().then(function(data) {
-          redirect(data.displayName , data.liff.getDecodedIDToken());  //userId
+        liff.getProfile().getDecodedIDToken().then(function(data) {
+          redirect(data.displayName , data.decodedIDToken);  //userId
         })
         .catch(function(err) {
         alert('服務異常，將重新登入');
