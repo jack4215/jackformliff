@@ -33,6 +33,7 @@
    <hr width=90%>
     <p id="displayName"><b>　　displayName:</b> </p>
     <p id="userId"><b>　　userId:</b> </p>
+    <p id="decodedIDToken"><b>　email:</b> </p>
    <hr width=90%>
    <p><P valign="bottom" Align=center>By 筍伯♪ Jack |･ω･)</p>
   </font>
@@ -50,6 +51,7 @@
     const profile = await liff.getProfile()
     document.getElementById("displayName").append(profile.displayName)
     document.getElementById("userId").append(profile.userId)
+    document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
   }
   main()  
 </script>  
