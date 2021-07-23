@@ -76,7 +76,6 @@
           redirect(data.displayName , data.userId);
         })
         .catch(function(err) {
-        alert('服務異常，將重新登入');
         liff.logout(); 
         window.location.reload();
         })
