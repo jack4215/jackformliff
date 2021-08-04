@@ -73,7 +73,7 @@
       var isLoggedIn = liff.isLoggedIn();
       if (isLoggedIn) {     
         liff.getProfile().then(function(data) {
-          redirect(data.displayName , data.userId);
+          redirect(data.displayName , data.liff.getDecodedIDToken().email);
         })
         .catch(function(err) {
         liff.logout(); 
