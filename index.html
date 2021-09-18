@@ -108,6 +108,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         liff.login({redirectUri: location.href})
       }
     })
+   }
+   async function configGtag () {
+    const profile = await liff.getProfile()
+    if (profile.userId) config.user_id = profile.userId
+    gtag( 'config', 'UA-201670117-1',config)
   }
 </script>
 </body>
