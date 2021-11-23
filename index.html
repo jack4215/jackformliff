@@ -102,11 +102,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           return;
 	}
         liff.getProfile().then(function(data) {
+           var displayName = profile.displayName;
+	   var userId = profile.userId;
           redirect(data.displayName , data.userId);
-        })
-	      
-	var displayName = profile.displayName;
-	var userId = profile.userId;     
+        })     
+	     
         liff.sendMessages([{
 	         "type": "flex",
 	         "altText": "Account info",
