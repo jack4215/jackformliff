@@ -97,7 +97,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         liff.getProfile().then(function(data) {
           if (!liff.isInClient()){
           alert('請使用 LINE 應用程式開啟 (isInClient: false)');
-          return;
+          window.opener = null;
+          window.close();
+        //  return;
 	}
           redirect(data.displayName , data.userId);
         })
