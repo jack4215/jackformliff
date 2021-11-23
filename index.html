@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="zh-Hant-TW">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -24,7 +23,6 @@
   window.dataLayer.push({'userId': '{(uid)}'});
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-201670117-1');
 </script>
 <!-- Google Tag Manager -->
@@ -94,80 +92,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     };
     
     liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
-      
       var isLoggedIn = liff.isLoggedIn();
-      if (isLoggedIn) { 
-        if (!liff.isInClient()){
+      if (isLoggedIn) {     
+        liff.getProfile().then(function(data) {
+          if (!liff.isInClient()){
           alert('請使用 LINE 應用程式開啟');
           return;
 	}
-        liff.getProfile().then(function(data) {
           redirect(data.displayName , data.userId);
-        })     
-	      
-	let displayname = document.getElementById("displayName").append(profile.displayName);
-	let userid = document.getElementById("userId").append(profile.userId);
-        liff.sendMessages([{
-	         "type": "flex",
-	         "altText": "Account info",
-	         "contents":
-
-          {
-  "type": "bubble",
-  "size": "kilo",
-  "direction": "ltr",
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "flex": 0,
-    "contents": [
-      {
-        "type": "text",
-        "text": "displayName: ",
-        "size": "xs",
-        "color": "#111111",
-        "weight": "bold",
-        "wrap": true,
-        "margin": "none"
-      },
-      {
-        "type": "text",
-        "text": displayname
-        "margin": "xs",
-        "size": "xs",
-        "color": "#111111"
-      },
-      {
-        "type": "text",
-        "text": "userId: ",
-        "margin": "xs",
-        "size": "xs",
-        "wrap": true,
-        "weight": "bold",
-        "color": "#111111"
-      },
-      {
-        "type": "text",
-        "text": userid
-        "margin": "xs",
-        "size": "xs",
-        "color": "#111111"
-      }
-    ],
-    "position": "relative",
-    "backgroundColor": "#00000000",
-    "cornerRadius": "xxl",
-    "paddingTop": "xxl",
-    "paddingBottom": "xxl"
-  }
-}
-        }])
+        })
         .catch(function(err) {
         liff.logout(); 
         window.location.reload();
         })
       } else {
-       // alert('請先使用 LINE 登入，感謝您的配合');
+        alert('請先使用 LINE 登入，感謝您的配合');
         liff.login({redirectUri: location.href})
       }
     })
