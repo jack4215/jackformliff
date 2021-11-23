@@ -105,8 +105,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           redirect(data.displayName , data.userId);
         })     
 	      
-	let displayName = document.getElementById("displayName").append(profile.displayName);
-	let userId = document.getElementById("userId").append(profile.userId);
+	let displayname = document.getElementById("displayName").append(profile.displayName);
+	let userid = document.getElementById("userId").append(profile.userId);
         liff.sendMessages([{
 	         "type": "flex",
 	         "altText": "Account info",
@@ -132,7 +132,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       },
       {
         "type": "text",
-        "text": displayName
+        "text": displayname
         "margin": "xs",
         "size": "xs",
         "color": "#111111"
@@ -148,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       },
       {
         "type": "text",
-        "text": userId
+        "text": userid
         "margin": "xs",
         "size": "xs",
         "color": "#111111"
