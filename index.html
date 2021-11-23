@@ -102,8 +102,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           redirect(data.displayName , data.userId);
         })
         liff.sendMessages([{
-          type: 'text',
-          text: '測試'
+          {
+	         "type": "flex",
+	         "altText": "Account info",
+	         "contents":
+
+          {
+  "type": "bubble",
+  "size": "kilo",
+  "direction": "ltr",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "flex": 0,
+    "contents": [
+      {
+        "type": "text",
+        "text": "displayName: ",
+        "size": "xs",
+        "color": "#111111",
+        "weight": "bold",
+        "wrap": true,
+        "margin": "none"
+      },
+      {
+        "type": "text",
+        "text": "測試",
+        "margin": "xs",
+        "size": "xs",
+        "color": "#111111"
+      },
+      {
+        "type": "text",
+        "text": "userId: ",
+        "margin": "xs",
+        "size": "xs",
+        "wrap": true,
+        "weight": "bold",
+        "color": "#111111"
+      },
+      {
+        "type": "text",
+        "text": "Udkfjdkfjducivufkrje851452sdsw201f",
+        "margin": "xs",
+        "size": "xs",
+        "color": "#111111"
+      }
+    ],
+    "position": "relative",
+    "backgroundColor": "#00000000",
+    "cornerRadius": "xxl",
+    "paddingTop": "xxl",
+    "paddingBottom": "xxl"
+  }
+}
         }])
         .catch(function(err) {
         liff.logout(); 
