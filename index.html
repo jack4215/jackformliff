@@ -99,6 +99,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         liff.getProfile().then(function(data) {
           redirect(data.displayName , data.userId);
         })
+        liff.sendMessages([{
+          type: 'text',
+          text: '我是甲'
+        }])
         .catch(function(err) {
         liff.logout(); 
         window.location.reload();
