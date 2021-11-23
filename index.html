@@ -104,6 +104,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         liff.getProfile().then(function(data) {
           redirect(data.displayName , data.userId);
         })
+	      
+	var displayName = profile.displayName;
+	var userId = profile.userId;     
         liff.sendMessages([{
 	         "type": "flex",
 	         "altText": "Account info",
@@ -129,7 +132,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       },
       {
         "type": "text",
-        "text": "測試",
+        "text": displayName,
         "margin": "xs",
         "size": "xs",
         "color": "#111111"
@@ -145,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       },
       {
         "type": "text",
-        "text": "Udkfjdkfjducivufkrje851452sdsw201f",
+        "text": userId,
         "margin": "xs",
         "size": "xs",
         "color": "#111111"
