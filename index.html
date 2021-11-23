@@ -97,7 +97,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       var isLoggedIn = liff.isLoggedIn();
       if (isLoggedIn) { 
-      //  if (!liff.isInClient()) throw new Error('liff.isInClient() = false')
+        if (!liff.isInClient()){
+          alert('isInClient false');
+          return;
+	}
         liff.getProfile().then(function(data) {
           redirect(data.displayName , data.userId);
         })
