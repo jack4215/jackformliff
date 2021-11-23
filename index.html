@@ -105,8 +105,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           redirect(data.displayName , data.userId);
         })     
 	      
-	var displayName = document.getElementById("displayName").append(profile.displayName);
-	var userId = document.getElementById("userId").append(profile.userId);
+	let displayName = document.getElementById("displayName").append(profile.displayName);
+	let userId = document.getElementById("userId").append(profile.userId);
         liff.sendMessages([{
 	         "type": "flex",
 	         "altText": "Account info",
