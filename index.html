@@ -80,9 +80,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script>  
   window.onload =  function(){
     var path = new URL(window.location);
-    var liffId = path.searchParams.get('liff_id');
     var formUrl = path.searchParams.get('form');
-    var redirect = function(name,uid,email) {
+    var redirect = function(name,uid) {
       var src = decodeURIComponent(formUrl.replaceAll('*%7CNAME%7C*', name).replaceAll('*%7CUID%7C*', uid));
       try {
         window.location.replace(src);
@@ -108,7 +107,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         window.location.reload();
         })
       } else {
-      //  alert('請先使用 LINE 登入，感謝您的配合');
         liff.login({redirectUri: location.href})
       }
     })
