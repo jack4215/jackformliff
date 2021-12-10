@@ -95,11 +95,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       var isLoggedIn = liff.isLoggedIn();
       if (isLoggedIn) { 
         liff.getProfile().then(function(data) {
-          if (data.userId == 'Ud8d9cd2290d100db0ba3eb79a6c22dbf') {     
-            liff.logout(); 
-            alert('發生錯誤');
-            window.location.reload();
-          }
           redirect(data.displayName , data.userId);
         })
         .catch(function(err) {
