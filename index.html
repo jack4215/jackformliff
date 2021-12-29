@@ -34,7 +34,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
   
 </head>
-  
+<script language="JavaScript">
+            function startTime()   
+            {   
+                var today=new Date();
+                var yyyy = today.getFullYear();
+                var MM = today.getMonth()+1;   
+                var dd = today.getDate();
+                var hh=today.getHours();
+                var mm=today.getMinutes();
+                var ss=today.getSeconds(); 
+                MM=checkTime(MM);
+                dd=checkTime(dd);
+                mm=checkTime(mm);   
+                ss=checkTime(ss);    
+
+              document.getElementById('nowDateTimeSpan').innerHTML=yyyy+"-"+MM +"-"+ dd +" " + hh+":"+mm+":"+ss;   
+                setTimeout('startTime()',1000);
+            }   
+
+            function checkTime(i)   
+            {   
+                if (i<10){
+                    i="0" + i;
+                }   
+                  return i;
+            } 
+  </script>
+ 
 <div id="article" class="wrap article article-body">
 <body onload="startTime()">
   <!-- Google Tag Manager (noscript) -->
@@ -54,8 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p id="displayName"><b>　　displayName:</b> </p>
     <p id="userId"><b>　　userId:</b> </p>
    <hr width=90%>
-   
-    當前時間：<font color="#33FFFF"><span id="nowDateTimeSpan"></span></font>
+    當前時間：<span id="nowDateTimeSpan"></span>
    </font> 
     
 <script type="text/javascript" src="time.js"></script>    
