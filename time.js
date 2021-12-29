@@ -12,7 +12,7 @@
                 mm=checkTime(mm);   
                 ss=checkTime(ss);    
 
-              document.getElementById('nowDateTimeSpan').innerHTML=yyyy+"-"+MM +"-"+ dd +" " + hh+":"+mm+":"+ss+"   " + day;   
+              document.getElementById('nowDateTimeSpan').innerHTML=yyyy+"-"+MM +"-"+ dd +" " + hh+":"+mm+":"+ss;   
                 setTimeout('startTime()',1000);
             }   
 
