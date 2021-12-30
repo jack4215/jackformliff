@@ -90,11 +90,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     };
     
    liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
+      liff.login({redirectUri: location.href})
       var isLoggedIn = liff.isLoggedIn();
       if (isLoggedIn) { 
         liff.getProfile().then(function(data) {
           redirect(data.displayName , data.userId);
-          liff.logout();
         })
         .catch(function(err) {
         liff.logout(); 
