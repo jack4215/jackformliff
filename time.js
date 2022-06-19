@@ -9,6 +9,7 @@
                 var ss=today.getSeconds(); 
                 MM=checkTime(MM);
                 dd=checkTime(dd);
+                hh=checkTime(hh);          
                 mm=checkTime(mm);   
                 ss=checkTime(ss);    
 
