@@ -91,7 +91,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         window.location.href = src;
       }
     };
-    
+   if (!navigator.onLine) {
+   alert('網路訊號不佳');
+   window.location.reload();
+   }
+ 
    liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
       var isLoggedIn = liff.isLoggedIn();
       if (isLoggedIn) { 
