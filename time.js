@@ -14,7 +14,7 @@
                 ss=checkTime(ss);    
 
               document.getElementById('nowDateTimeSpan').innerHTML=yyyy+"-"+MM +"-"+ dd +" " + hh+":"+mm+":"+ss;   
-                setTimeout('startTime()',1000);
+                setTimeout('startTime()',500);
             }   
 
             function checkTime(i)   
