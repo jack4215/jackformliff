@@ -95,7 +95,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  
    liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
       var isLoggedIn = liff.isLoggedIn();
+      var getFriendship = liff.getFriendship();
       if (isLoggedIn) { 
+        if (!getFriendship) { 
+          window.location.replace("https://liff.line.me/1645278921-kWRPP32q/?accountId=896yntht");
+        }
         liff.getProfile().then(function(data) {
           redirect(data.displayName , data.userId);
         })
