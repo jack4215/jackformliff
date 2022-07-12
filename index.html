@@ -84,8 +84,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     var path = new URL(window.location);
     var liffId = path.searchParams.get('liff_id');
     var formUrl = path.searchParams.get('form');
-    var redirect = function(name,email) {
-      var src = decodeURIComponent(formUrl.replaceAll('*%7CNAME%7C*', name).replaceAll('*%7CUID%7C*', email));
+    var redirect = function(name,uid) {
+      var src = decodeURIComponent(formUrl.replaceAll('*%7CNAME%7C*', name).replaceAll('*%7CUID%7C*', uid));
       try {
         window.location.replace(src);
       } catch {
@@ -101,9 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         liff.getFriendship().then(function(f) {
           if (f.friendFlag) {
             liff.getProfile().then(function(data) {
-              var idToken = liff.getDecodedIDToken();
-              var email = data.email;
-              redirect(data.displayName , data.email);
+              redirect(data.displayName , data.userId);
             }).catch(function(err) {
                liff.logout(); 
                alert('發生錯誤，系統將重新轉導\n（若多次出現此視窗，請嘗試將應用程式升級為最新版本）');
