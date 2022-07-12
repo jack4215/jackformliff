@@ -101,16 +101,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           if (f.friendFlag) {
             liff.getProfile().then(function(data) {
             redirect(data.displayName , data.userId);
+            }).catch(function(err) {
+               liff.logout(); 
+               alert('發生錯誤，系統將重新轉導\n（若多次出現此視窗，請嘗試將應用程式升級為最新版本）');
+               window.location.reload();
             })
           } else {
             alert('請先加入本服務 LINE 官方帳號');
             window.location.href = "https://liff.line.me/1645278921-kWRPP32q/?accountId=896yntht";
           }
-        })
-        .catch(function(err) {
-        liff.logout(); 
-        alert('發生錯誤，系統將重新轉導\n（若多次出現此視窗，請嘗試將應用程式升級為最新版本）');
-        window.location.reload();
         })
       } else {
         liff.login({redirectUri: location.href})
