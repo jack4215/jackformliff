@@ -1,6 +1,6 @@
 # jackformliff
 
- 透過 LINE Login，自動帶入 Profile 至 Google 表單。
+ liff 網頁轉導
  
  2021-07-13 : iOS 及 Android 均正常
 
