@@ -110,13 +110,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           if (f.friendFlag) {
             liff.getProfile().then(function(data) {
               redirect(data.displayName , data.userId);
+              const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.onmouseenter = Swal.stopTimer;
+                  toast.onmouseleave = Swal.resumeTimer;
+                }
+              });
+              Toast.fire({
+                icon: "success",
+                title: "Login successfully"
+              });
             }).catch(function(err) {
               liff.logout();
               Swal.fire({
                 title: "發生錯誤，系統將重新轉導",
                 text: "若多次出現此視窗，請嘗試將應用程式升級為最新版本",
                 icon: "error",
-                confirmButtonText: "立即前往"
+                confirmButtonText: "OK"
               }).then((result) => {
                 if (result.isConfirmed) {
                   window.location.reload();
