@@ -109,12 +109,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           } else {
            // alert('請先加入本服務 LINE 官方帳號');
             Swal.fire({
-              title: "加個好友la QQ",
-              text: "請先加入本服務 LINE 官方帳號",
+              title: "請先加入本服務 LINE 官方帳號",
               icon: "warning",
-              confirmButtonText: "OK"
-            });
-            window.location.href = "https://liff.line.me/1645278921-kWRPP32q/?accountId=896yntht";
+              confirmButtonText: "<a href="url">LINK</a>"
+            }).then((result) => {
+              if (result.value) {
+                window.location.href = "https://liff.line.me/1645278921-kWRPP32q/?accountId=896yntht";
+              }
+            }); 
+            //window.location.href = "https://liff.line.me/1645278921-kWRPP32q/?accountId=896yntht";
           }
         })
       } else {
