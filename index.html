@@ -15,7 +15,7 @@
   <link rel="shortcut icon" href="/article/photo/webicon02.png">
   <link rel="apple-touch-icon" href="/article/photo/webicon01.png">
   <link href="/article/css/001.css" rel="stylesheet">
- 
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-201670117-1"></script>
 <script>
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   main()  
 </script> 
-    
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>    
 <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>  
 <script>  
   window.onload = function(){
@@ -107,7 +107,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                window.location.reload();
             })
           } else {
-            alert('請先加入本服務 LINE 官方帳號');
+           // alert('請先加入本服務 LINE 官方帳號');
+            Swal.fire({
+              title: "加個好友la QQ",
+              text: "請先加入本服務 LINE 官方帳號",
+              icon: "warning",
+              confirmButtonText: "OK"
+            });
             window.location.href = "https://liff.line.me/1645278921-kWRPP32q/?accountId=896yntht";
           }
         })
