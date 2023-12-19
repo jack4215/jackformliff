@@ -112,20 +112,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               redirect(data.displayName , data.userId);
             }).catch(function(err) {
               liff.logout();
-              Swal.fire({
-              title: "發生錯誤，系統將重新轉導",
-              text: "若多次出現此視窗，請嘗試將應用程式升級為最新版本",
-              icon: "error",
-              confirmButtonText: "立即前往"
+              /*Swal.fire({
+                title: "發生錯誤，系統將重新轉導",
+                text: "若多次出現此視窗，請嘗試將應用程式升級為最新版本",
+                icon: "error",
+                confirmButtonText: "立即前往"
               }).then((result) => {
                 if (result.isConfirmed) {
                   window.location.reload();
                 } else {
                   window.location.reload();
                 }
-              }); 
-              //alert('發生錯誤，系統將重新轉導\n（若多次出現此視窗，請嘗試將應用程式升級為最新版本）');
-              //window.location.reload();
+              }); */
+              alert('發生錯誤，系統將重新轉導\n（若多次出現此視窗，請嘗試將應用程式升級為最新版本）');
+              window.location.reload();
             })
           } else {
             Swal.fire({
