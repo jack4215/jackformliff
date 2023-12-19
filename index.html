@@ -111,8 +111,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             Swal.fire({
               title: "請先加入本服務 LINE 官方帳號",
               icon: "warning",
-              confirmButtonText: "<a href="url">LINK</a>"
-            })
+              confirmButtonText: "立即前往"
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = "https://liff.line.me/1645278921-kWRPP32q/?accountId=896yntht";
+              }
+            }); 
             //window.location.href = "https://liff.line.me/1645278921-kWRPP32q/?accountId=896yntht";
           }
         })
