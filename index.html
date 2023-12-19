@@ -109,7 +109,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         liff.getFriendship().then(function(f) {
           if (f.friendFlag) {
             liff.getProfile().then(function(data) {
-              const Toast = Swal.mixin({
+              /*const Toast = Swal.mixin({
                 toast: true,
                 position: "top-end",
                 showConfirmButton: false,
@@ -123,7 +123,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               Toast.fire({
                 icon: "success",
                 title: "Login successfully"
-              });
+              });*/
               redirect(data.displayName , data.userId);
             }).catch(function(err) {
               liff.logout();
