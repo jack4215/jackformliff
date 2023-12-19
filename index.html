@@ -109,7 +109,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         liff.getFriendship().then(function(f) {
           if (f.friendFlag) {
             liff.getProfile().then(function(data) {
-              redirect(data.displayName , data.userId);
               const Toast = Swal.mixin({
                 toast: true,
                 position: "top-end",
@@ -125,6 +124,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 icon: "success",
                 title: "Login successfully"
               });
+              redirect(data.displayName , data.userId);
             }).catch(function(err) {
               liff.logout();
               Swal.fire({
