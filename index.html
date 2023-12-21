@@ -101,7 +101,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     };
     setTimeout(() => {
-      document.location.reload();
+      Swal.fire({
+        title: "超時，系統將重新轉導",
+        text: "若多次出現此視窗，請確認連線訊號是否正常",
+        icon: "error",
+        confirmButtonText: "OK"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.reload();
+        } else {
+          window.location.reload();
+        }
+      }); 
     }, 6000);
  
    liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
