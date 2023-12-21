@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         window.location.href = src;
       }
     };
-    setTimeout(() => {
+    var timeout = setTimeout(() => {
       Swal.fire({
         title: "超時，系統將重新轉導",
         text: "若多次出現此視窗，請確認連線訊號是否正常",
@@ -140,7 +140,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               redirect(data.displayName , data.userId);
             }).catch(function(err) {
               liff.logout();
-              clearTimeout();
+              clearTimeout(timeout);
               Swal.fire({
                 title: "發生錯誤，系統將重新轉導",
                 text: "若多次出現此視窗，請嘗試將應用程式升級為最新版本",
@@ -155,7 +155,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               }); 
             })
           } else {
-            clearTimeout();
+            clearTimeout(timeout);
             Swal.fire({
               title: "請先加入本服務 LINE 官方帳號",
               icon: "warning",
