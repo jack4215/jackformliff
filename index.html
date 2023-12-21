@@ -100,7 +100,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         window.location.href = src;
       }
     };
-
+    setTimeout(() => {
+      document.location.reload();
+    }, 6000);
  
    liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
       var isLoggedIn = liff.isLoggedIn();
@@ -139,8 +141,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   window.location.reload();
                 }
               }); 
-              //alert('發生錯誤，系統將重新轉導\n（若多次出現此視窗，請嘗試將應用程式升級為最新版本）');
-              //window.location.reload();
             })
           } else {
             Swal.fire({
