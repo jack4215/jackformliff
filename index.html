@@ -118,17 +118,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     liff.init({liffId: "1656185375-gBk83qL0" }).then(function (e) {
       var isLoggedIn = liff.isLoggedIn();
       var idToken = liff.getDecodedIDToken();
-      liff.getDecodedIDToken().then((decodedIDToken) => {
-        const userEmail = decodedIDToken.email;
-        if (userEmail) {
-          console.log('User Email:', userEmail);
-        } else {
-          console.log('使用者未提供電子郵件資訊');
-        }
-      }).catch((error) => {
-        console.error('取得 ID Token 時發生錯誤', error);
-      });
-
       if (isLoggedIn) { 
         liff.getFriendship().then(function(f) {
           if (f.friendFlag) {
