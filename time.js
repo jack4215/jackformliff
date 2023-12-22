@@ -26,7 +26,7 @@
 // }  
 function startTime() {
   var today = new Date();
-  var offset = -8; // UTC+8 時區偏移量
+  var offset = +8; // UTC+8 時區偏移量
   var utc = today.getTime() + (today.getTimezoneOffset() * 60000);
   var localTime = new Date(utc + (3600000 * offset));
 
