@@ -13,12 +13,12 @@ function startTime(){
   ss = checkTime(ss);    
 
   document.getElementById('nowDateTimeSpan').innerHTML=yyyy+"-"+MM +"-"+ dd +" " + hh+":"+mm+":"+ss;   
-    setTimeout('startTime()',1000);
+  setTimeout('startTime()',1000);
 }   
 
 function checkTime(i){   
-    if (i<10){
-        i="0" + i;
+    if (i < 10){
+        i = "0" + i;
     }   
       return i;
 }  
