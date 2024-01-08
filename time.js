@@ -1,5 +1,4 @@
-function startTime()   
-{   
+function startTime(){   
   var today = new Date();
   var yyyy = today.getUTCFullYear();
   var MM = today.getUTCMonth() + 1;
@@ -17,8 +16,7 @@ function startTime()
     setTimeout('startTime()',1000);
 }   
 
-function checkTime(i)   
-{   
+function checkTime(i){   
     if (i<10){
         i="0" + i;
     }   
