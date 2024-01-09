@@ -1,5 +1,7 @@
 function startTime(){   
   var today = new Date();
+  today.setHours(today.getHours() + 8);
+  
   var yyyy = today.getUTCFullYear();
   var MM = today.getUTCMonth() + 1;
   var dd = today.getUTCDate();
