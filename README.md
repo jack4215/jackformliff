@@ -1,7 +1,4 @@
-# jackformliff
+# liff
 
- liff 網頁轉導
- 
- 2021-07-13 : iOS 及 Android 均正常
+- forms：Page Redirect to Google Forms
 
- By 筍伯♪
